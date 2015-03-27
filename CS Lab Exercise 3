@@ -1,0 +1,40 @@
+#include <iostream> //Pre-processor directive
+using namespace std;
+
+int main ()
+{
+	cout << "*This program will display odd and even numbers on the number you input then add up all even and multiply all odd numbers.*"<<endl;
+	int x,Number,A=0,B=1,C=0,D;// Variables
+	
+	cout << "\n \n Input an integer: ";//Description of the variable number
+	cin >> Number; 
+	
+	cout << "\n \n The Even Numbers are:"<<endl;//Description of the variable D
+	for (int x=1;x<=Number;x++) 
+	{ 
+	if(x%2==0) 
+	{ 
+	cout<<x<<" "; 
+	C+=x; 
+	D*=x; 
+	} 
+	} 
+	
+	cout << "\n \n The Sum of Even Numbers is:"<<C<<endl;//Description of the variable C
+	
+	
+	cout << "\n \n The Odd Numbers are:"<<endl;//Description of the variable A
+	for (x=1;x<=Number;x++) 
+	{ 
+	if(x%2!=0) 
+	{ 
+	cout<<x<<" "; 
+	A+=x; 
+	B*=x; 
+	} 
+	}
+	
+	cout << "\n \n The Product of Odd Numbers is :"<<B<<endl;//Description of the variable B
+	
+	return 0; 
+}

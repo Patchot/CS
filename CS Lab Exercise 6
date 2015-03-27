@@ -1,0 +1,23 @@
+#include<iostream> //Pre-processor directive
+#include<iomanip>
+using namespace std;
+double conversion(double,double); 
+
+int main()
+{
+	double N1; //Declaration of Variables
+	double N2; //Declaration of Variables
+	cout << "This program will convert metric ton(s) to ounces." << endl; //Description of the Program
+	cout << "\n Enter the weight in metric ton(s) (N1): "; cin >> N1; cout << endl;
+	N2 = conversion(N1,N2); 
+	cout << " It is equal to " << N2 << " ounces (N2)" << endl;
+	return 0;
+	
+}
+
+double conversion(double N1,double N2)
+{	
+	const double ton = 35273.92;
+	N2 = N1 * ton;
+	return N2;
+}

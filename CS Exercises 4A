@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int First, Second, Third;
+	cout<< "Enter 3 numbers:"<<endl;
+	cin>>First>>Second>>Third;
+	
+		if ((First<Second)&&(First<Third)&&(Second<Third))
+	 {
+         cout<< "The ascending order of the numbers is: "<<First<<", "<<Second<<", "<<Third<<endl;
+     }
+     else if ((First<Third)&&(First<Second)&&(Third<Second))
+      {
+         cout<< "The ascending order of the numbers is: "<<First<<", "<<Third<<", "<<Second<<endl;
+     }
+	 else if ((Second<First)&&(Second<Third)&&(First<Third))
+      {
+         cout<< "The ascending order of the numbers is: "<<Second<<", "<<First<<", "<<Third<<endl;
+     }
+     else if ((Second<First)&&(Second<Third)&&(Third<First))
+      {
+         cout<< "The ascending order of the numbers is: "<<Second<<", "<<Third<<", "<<First<<endl;
+     }
+      else if ((Third<First)&&(Third<Second)&&(First<Second))
+      {
+         cout<< "The ascending order of the numbers is: "<<Third<<", "<<First<<", "<<Second<<endl;
+	}
+     else if ((Third<First)&&(Third<Second)&&(Second<First))
+      {
+         cout<< "The ascending order of the numbers is: "<<Third<<", "<<Second<<", "<<First<<endl;
+	}
+	
+	return 0;
+}
+

@@ -1,0 +1,336 @@
+//Members:
+//Resoso
+//Reyes
+//Dela Cruz
+//Uy
+
+#include <iostream>
+#include <cstdlib>
+#include <iomanip>
+#include <windows.h>
+#include <conio.h>
+using namespace std;
+
+void gamedifficulty (); 
+void normal ();
+void hard ();
+void average ();
+void gameinstructions ();
+void instruction1 ();
+void box();
+void box2();
+void gamestartcount();
+
+int main()
+{
+	int menuchoice;
+		do //loop so that the program will loop back to the main menu after every option except option 3 
+	{
+		system("cls");
+		system("COLOR 8"); //changes text color to gray..
+		cout << "===============================================================================" << endl;
+    	cout << "          		          Word Hunt" << endl;
+    	cout << "===============================================================================" << endl;
+    	cout << "\n	      	       Welcome to 'Word Hunt' game." << endl;
+		cout<<"\tMenu: "<<endl;
+		cout<<"\t\t 1.) Play"<<endl;
+		cout<<"\t\t 2.) Instructions"<<endl;
+		cout<<"\t\t 3.) Exit"<<endl;
+		cout<<"\tEnter number of choice: ";
+		cin>>menuchoice;
+		
+		if (menuchoice == 1) 
+		{
+			gamedifficulty(); 
+		}
+		else if (menuchoice == 2)
+		{
+			gameinstructions();
+		}
+		else if (menuchoice == 3)
+		{
+			return 0;
+		}
+		else 
+		{
+			cout<<"\n\n\n\t\t\t\tINVALID INPUT. Enter only [1],[2],[3],[3],[4]"; // for any option entered that is not in the menu
+		}
+	}while(menuchoice!=3);
+	
+}
+
+void gamedifficulty()
+{
+	int diffchoice;
+	do
+	{
+	system("cls");
+	cout << "\n>>>Choose your difficulty level: " << endl;
+    cout << ">Enter '1' for 'Easy'." << endl;
+    cout << ">Enter '2' for 'Average'." << endl;
+    cout << ">Enter '3' for 'Difficult'."<<endl;
+    cout << ">OR"<<endl;
+    cout << ">Enter '4' to go back to menu" <<endl;
+	cin >>diffchoice;
+	
+		if(diffchoice==1)
+		{
+			gamestartcount();
+			normal ();
+			goto back;
+
+		}
+		else if(diffchoice==2)
+		{
+			gamestartcount();
+			average ();
+			goto back;
+
+		}
+		else if(diffchoice==3)
+		{
+			gamestartcount();
+			hard();
+			goto back;
+		}
+		else if(diffchoice==4)
+		{
+			goto back;
+		}
+		else
+		{
+			system("cls");
+			cout<<"\n\n\n\t\t\t\tINVALID INPUT"; // for any option entered that is not in the menu
+		}
+	}while((diffchoice!=3) || (diffchoice!=1) || (diffchoice!=2) || (diffchoice!=4));
+	back:;
+}
+
+void gameinstructions()
+{
+	int back, Acount, Bcount;
+	do
+	{
+		system("cls");
+		cout<<"\n\n\tThis game aims to increase your vocabulary and word finding skills.";
+		Sleep(3000);
+		system("cls");
+		Acount=0;
+		do
+		{	
+			instruction1();
+			Acount++;
+		}while (Acount<3);
+	
+	}while (back!=2);
+}
+
+void instruction1()
+{
+	cout <<"To play this game you should construct words that are inside the box"<<endl;
+	box();
+	Sleep(2000);
+	system("cls");
+	cout <<"Then continue finding more possible words.."<<endl;
+	box2();
+	cout <<"But remember 1 mistake means you lose :P"<<endl;
+	Sleep(5000);
+	system("cls");
+	main();
+	
+}
+
+void gamestartcount()
+{
+	system("cls");
+	cout<<"\n\n\n\n\n\n\n\t\t\tThe Game will Start in 05 seconds"<<endl;
+	Sleep(1000);
+	system("cls");
+	cout<<"\n\n\n\n\n\n\n\t\t\tThe Game will Start in 04 seconds"<<endl;
+	Sleep(1000);
+	system("cls");
+	cout<<"\n\n\n\n\n\n\n\t\t\tThe Game will Start in 03 seconds"<<endl;
+	Sleep(1000);
+	system("cls");
+	cout<<"\n\n\n\n\n\n\n\t\t\tThe Game will Start in 02 seconds"<<endl;
+	Sleep(1000);
+	system("cls");
+	cout<<"\n\n\n\n\n\n\n\t\t\tThe Game will Start in 01 seconds"<<endl;
+	Sleep(1000);
+	system("cls");
+}
+
+void box()
+{
+	cout <<"-------------------"<<endl;
+	cout <<"| [A] | [B] |  D  |"<<endl;
+	cout <<"-------------------"<<endl;
+	cout <<"|  L  |  X  |  Y  |"<<endl;
+	cout <<"-------------------"<<endl;
+	cout <<"| [G] |  E  |  F  |"<<endl;
+	cout <<"-------------------"<<endl;
+	cout <<endl;
+	cout <<"ENTER WORD 1 = 'BAG'"<<endl;
+	Sleep(5000);
+	system ("CLS");
+	
+	
+}
+void box2()
+{
+	cout <<"--------------------"<<endl;
+	cout <<"|   A  |  B  |  D  |"<<endl;
+	cout <<"--------------------"<<endl;
+	cout <<"|  [L] |  X  |  Y  |"<<endl;
+	cout <<"--------------------"<<endl;
+	cout <<"|  [G] | [E] |  F  |"<<endl;
+	cout <<"--------------------"<<endl;
+	cout <<endl;
+	cout <<"ENTER WORD 1 = BAG "<<endl;
+	cout <<"ENTER WORD 2 = LEG "<<endl;
+	Sleep(5000);
+	system ("CLS");
+	
+}
+void normal()
+{
+	system("cls");
+	cout <<"First level. Find only THREE letter words.  6 possible combination of words. \nStart!"<<endl;
+	cout <<" ------------------\n";
+	cout <<"|  L  |  B  |  C  |\n";
+	cout <<"-------------------\n";
+	cout <<"|  G  |  H  |  I  |\n"; 
+	cout <<"-------------------\n";
+	cout <<"|  M  |  N  |  P  |\n";
+	cout <<" ------------------\n";
+	//possible words:lip,hip,nip,big,pin,bin
+	string words1;
+	string words2;
+	string words3;
+	string words4;
+	string words5;
+	string words6;
+	string words7;
+	const string words=("lip", "hip", "nip", "big", "pin","bin", "pig");
+	cout <<"Enter word here: ";	cin>>words1;
+	cout <<"Enter 2nd word here: "; cin>> words2;
+	cout <<"Enter 3rd word here: "; cin>> words3;
+	cout <<"Enter 4th word here: "; cin>> words4;
+	cout <<"Enter 5th word here: "; cin>> words5;
+	cout <<"Enter 6th word here: ";cin>>words6;
+	cout <<"Enter final word here: ";cin>>words7;
+
+	if(words1,words2,words3,words4,words5,words6,words7==words)
+		cout<<"Correct!"<<endl;
+	else
+		cout <<"Wrong!"<<endl;
+	
+	
+	if(words1,words2,words3,words4,words5,words6,words7==words)
+		cout <<"You WIN!\nNow go and play average mode!"<<endl;
+		else
+		cout <<"You LOSE! :(\nThe words are 'lip','hip','nip','big','pin','bin' and 'pig'"<<endl;
+	
+	
+	
+	system("pause");
+	_getch;
+	
+}
+
+void average()
+{
+	system("cls");
+	cout <<"Average mode. Find at least 5 words! 5 Letters only!!! \nStart!\n"<<endl;
+		cout <<" ------------------------\n";
+		cout <<"|  L  |  B  |  C  |  Q  |\n";
+		cout <<"-------------------------\n";
+		cout <<"|  G  |  H  |  I  |  U  |\n";
+		cout <<"-------------------------\n";
+		cout <<"|  M  |  N  |  P  |  X  |\n";
+		cout <<"-------------------------\n";
+		cout <<"|  D  |  R  |  E  |  Z  |\n";
+		cout <<" ------------------------\n";
+		//possible words: grind,bling,prune,miner,price
+			string words1;
+	string words2;
+	string words3;
+	string words4;
+	string words5;
+	const string words=("grind", "bling", "prune", "miner", "price");
+	cout <<"Enter word here: ";	cin>>words1;
+	cout <<"Enter 2nd word here: "; cin>> words2;
+	cout <<"Enter 3rd word here: "; cin>> words3;
+	cout <<"Enter 4th word here: "; cin>> words4;
+	cout <<"Enter 5th word here: "; cin>> words5;
+
+	if(words1,words2,words3,words4,words5==words)
+		cout<<"Correct!"<<endl;
+	else
+		cout <<"Wrong!"<<endl;
+	
+	
+	if(words1,words2,words3,words4,words5==words)
+		cout <<"You WIN!\n Now go and play hard mode!"<<endl;
+		else
+		cout <<"You LOSE! :(\nThe words are 'grind','bling','prune','miner','price'"<<endl;
+		
+	
+	
+	system("pause");
+	_getch;
+		
+		
+}
+
+void hard()
+{
+	system("cls");
+	cout << "Hard Mode. Find only FOUR letter words. 10 possible words.\n Start!\n"<<endl;
+	cout <<" ------------------\n";
+	cout <<"|  L  |  B  |  C  |\n";
+	cout <<"-------------------\n";
+	cout <<"|  G  |  H  |  I  |\n";
+	cout <<"-------------------\n";
+	cout <<"|  M  |  N  |  P  |\n";
+	cout <<"------------------ \n";
+	cout <<"|  G  |  R  |  E  |\n";
+	cout <<" ------------------\n";
+	//possible words:ripe,chin,mice,lime,rice,grip,chip,ring, mile, pile
+	string words1;
+	string words2;
+	string words3;
+	string words4;
+	string words5;
+	string words6;
+	string words7;
+	string words8;
+	string words9;
+	string words10;
+	const string words=("ripe", "chin", "mice", "lime", "rice", "grip", "chip", "ring", "mile", "pile");
+	cout <<"Enter word here: ";	cin>>words1;
+	cout <<"Enter 2nd word here: "; cin>> words2;
+	cout <<"Enter 3rd word here: "; cin>> words3;
+	cout <<"Enter 4th word here: "; cin>> words4;
+	cout <<"Enter 5th word here: "; cin>> words5;
+	cout <<"Enter 6th word here: "; cin>>words6;
+	cout <<"Enter 7th word here: "; cin>>words7;
+	cout <<"Enter 8th word here: "; cin>>words8;
+	cout <<"Enter 9th word here: "; cin>>words9;
+	cout <<"Enter 10th word here: ";cin>>words10;
+	if(words1,words2,words3,words4,words5,words6,words7,words8,words9,words10==words)
+		cout<<"Correct!"<<endl;
+	else
+		cout <<"Wrong!"<<endl;
+	
+	
+	if(words1,words2,words3,words4,words5,words6,words7,words8,words9,words10==words)
+		cout <<"You WIN!\nCongratulations! You're word finding skill are awesome!"<<endl;
+		else
+		cout <<"You LOSE! :(\nThe words are 'ripe','chin','mice','lime','rice','grip','chip','ring','mile' and 'pile'"<<endl;
+	
+	
+	
+	system("pause");
+	_getch;
+}

@@ -1,0 +1,60 @@
+#include <iostream>
+#include <cctype>
+#include <windows.h>
+#include <cmath>
+using namespace std;
+
+int main ()
+{
+	int subselection;
+	char selection, abr;
+
+	system ("cls");
+	cout << "\t Patricia Mae Q. Omana, March 6, 2014, Practical Exam " << endl; //Describes the Author, Date, Description
+	cout << "\n \t\t\t MAIN MENU " << endl;
+	cout << endl;
+	
+	cout << "\t \t \t 1. ABOUT " << endl;
+	cout << "\t \t \t 2. ARMSTRONG NUMBER " << endl;
+	cout << "\t \t \t 3. EXIT " << endl;
+	
+	cout << "\n \t \t \t ~SELECT ANY CATEGORY~ " << endl; //Let the user select any category
+	cin >> selection;
+	
+	if ('1'== selection || '1'== selection) //Describes the selection A
+		{
+			system ("cls");
+			cout << "\t \t \t Patricia Mae Q. Omana " << endl;
+			cout << "\t \t \t 2013107138 " << endl;
+			cout << "\t \t \t March 6, 2014 " << endl;
+			
+			system ("pause");
+			return main ();
+		}
+		
+	else if ('2'== selection || '2'== selection) //Describes the selection B
+		{
+			system ("cls");
+			cout << " Input an integer from 0-999: " << abr << endl;
+			
+			if (abr == 0-999)
+			
+			cout << "\n It is an Armstrong Number " << endl;
+			
+			cout << "\n It is NOT an Armstrong Number " << endl;
+			
+			system ("pause");
+			return main ();
+			
+   	if ('3'== selection || '3'== selection) //Describes the selection C
+	{
+		    system ("cls");
+	    	cout << "\t\t\t PROGRAM SHUTTING DOWN " << endl;
+		    
+			return 0;
+		
+	}
+
+}
+	
+}
